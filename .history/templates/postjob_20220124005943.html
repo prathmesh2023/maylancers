@@ -1,0 +1,25 @@
+{% extends "base.html" %} {% block titile %} post job | MayLancers {% endblock titile %} {% block man %}
+
+<div class="container">
+
+
+    <form method="post" action="/login">
+        <div class="mb-3">
+
+            <input required type="text" name="uname" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Username ">
+
+        </div>
+        <div class="mb-3">
+
+            <input required type="password" name="pwd" class="form-control" id="exampleInputPassword1" placeholder="Password">
+        </div>
+        {% csrf_token %}
+
+
+        <button type="submit" class="btn btn-primary">LogIn</button>
+        <a href="/register"><button type="button" class="btn btn-success my-2">Create a new account</button></a>
+    </form>
+
+</div>
+
+{% endblock man %}

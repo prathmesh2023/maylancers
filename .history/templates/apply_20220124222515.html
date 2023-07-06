@@ -1,0 +1,26 @@
+{% extends "base.html" %} {% block title %} proposal to {{post.title}} {% endblock title %} {% block main %}
+
+<div class="container my-3">
+    <h3>Wtriet A Proposal to <span class="" style="color: green;">{{post.title}}</span></h3>
+</div>
+
+<div class="container">
+    <form method="post" action="/login">
+        <div class="mb-3">
+
+            <input required type="text" name="uname" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Username ">
+
+        </div>
+        <div class="mb-3">
+
+            <input required type="password" name="pwd" class="form-control" id="exampleInputPassword1" placeholder="Password">
+        </div>
+        {% csrf_token %}
+
+
+        <button type="submit" class="btn btn-primary">LogIn</button>
+        <a href="/register"><button type="button" class="btn btn-success my-2">Create a new account</button></a>
+    </form>
+</div>
+
+{% endblock main %}

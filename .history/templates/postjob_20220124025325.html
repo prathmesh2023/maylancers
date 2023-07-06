@@ -1,0 +1,94 @@
+{% extends "base.html" %} {% block title %} MayLancers {% endblock title %} {% load static %} {% block main %}
+<div class="container ">
+
+
+    <form method="post" action="/post_job" style="padding:30px;" enctype="multipart/form-data">
+        <div class="mb-3">
+            <label for="exampleInputEmail1">Work Tile / Name</label>
+
+            <input required required type="text" name="wtitle" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Work Tile ">
+
+        </div>
+        <div class="mb-3">
+            <label for="loc">Location</label>
+            <input required required type="text" name="loc" class="form-control" id="loc" placeholder="Ex. Pune,Maharashtra">
+        </div>
+
+
+        <div class="form-group">
+            <label for="exampleFormControlTextarea1">Description</label>
+            <textarea name="desc" required class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="exampleFormControlSelect1">Type Of Work</label>
+            <select name="cat" required class="form-control" id="exampleFormControlSelect1">
+                {% for i in cat %}
+                <option>{{i.title}}</option>
+                {% endfor %}
+          
+        
+          </div>
+
+
+        
+            </select>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group col-md-2">
+                <label for="inputEmail4">Email</label>
+                <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="inputPassword4">Password</label>
+                <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
+            </div>
+        </div>
+
+        <br> {% csrf_token %}
+
+        <input name="file" required type="file" id="file" style="display:none;">
+
+        <center>
+            <label for="file" class="btn btn-primary "><span class="fa fa-upload">   </span> Upload thumbnail</label></center>
+        <button type="submit" class="btn btn-success my-2"><span class="fa fa-edit"> </span> Post</button>
+    </form>
+
+</div>
+
+<style>
+    <style>.form {}
+    
+    form {
+        background-color: white;
+        padding: 10px;
+        font-family: cursive;
+        border-radius: 15px;
+    }
+    
+    form input {
+        height: 50px;
+        font-size: 20x;
+    }
+    
+    form button {
+        height: 50px;
+        width: 100%;
+    }
+    
+    .btn {
+        font-size: 20px;
+    }
+    
+    .ml {
+        margin-top: 10%;
+    }
+    
+    .mf {
+        margin-top: 8%;
+    }
+</style>
+
+
+{% endblock %}

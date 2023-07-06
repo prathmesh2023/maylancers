@@ -1,0 +1,246 @@
+.sh {
+    display: block;
+}
+
+@media only screen and (max-width: 900px) {
+    .sh {
+        display: none;
+    }
+}
+
+.mlogo {
+    display: none;
+}
+
+.mlog {
+    display: none;
+}
+
+.fmenu {
+    display: none;
+}
+
+@media only screen and (max-width: 900px) {
+    .logod {
+        display: none;
+    }
+    .mlog {
+        display: block;
+    }
+    .fmenu {
+        display: block;
+    }
+    .mlogo {
+        display: block;
+    }
+    .break {
+        display: none;
+    }
+}
+
+.primary-bg {
+    background-color: rgb(255, 78, 166);
+}
+
+.brand {
+    max-width: 100px;
+    max-height: 39px;
+    margin-top: -14px;
+    margin-left: 45px;
+}
+
+.bg-white {
+    background: white;
+}
+
+a u {
+    text-decoration: none;
+}
+
+.nav-item {
+    font-size: large;
+    font-family: 'Concert One';
+    font-size: 22px;
+    padding: 10px;
+}
+
+.nav-item:hover {
+    color: rgb(255, 78, 166);
+}
+
+a:hover {
+    colorrgb(255, 78, 166);
+}
+
+@media only screen and (max-width: 900px) {
+    .nav-item {
+        font-family: 'Concert One';
+        font-size: medium;
+        padding: 0px;
+        margin-top: 2px;
+    }
+    .navbar-nav {
+        margin-top: 15px;
+        background:
+    }
+}
+
+.in {
+    margin-top: 50px;
+}
+
+.bgc {
+    background-color: black;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 100%;
+    height: 400px;
+}
+
+
+/* fonts */
+
+.jone {
+    font-family: 'Jockey One';
+}
+
+.Courgette {
+    font-family: 'Courgette';
+}
+
+.searchbox {}
+
+.searchbox input {
+    border-radius: 0%;
+    height: 50px;
+    background-color: #ffffffd9;
+}
+
+.bt {
+    border-radius: 0%;
+    height: 50px;
+    font-family: Archivo Narrow;
+    font-size: 20px;
+}
+
+.di {
+    color: white;
+    border-radius: 0%;
+}
+
+
+/* cards */
+
+
+/* .sub {
+    background: #f5069d;
+    color: white;
+}
+
+.img-thumbnail {
+    padding: 0px;
+}
+
+.img {
+    margin-left: -31px;
+    width: 120%;
+    height: 180px;
+    border-style: solid;
+    border-size: px;
+    padding: 10px;
+    box-shadow: 5px 10px 18px #888888;
+    margin-top: -25px;
+}
+
+.card {
+    box-shadow: 5px 10px 18px #888888;
+}
+*/
+
+.card_main {
+    margin-top: -100px;
+}
+
+.sub {
+    background: #f5069d;
+    color: white;
+}
+
+.img-thumbnail {
+    padding: 0px;
+}
+
+.img {
+    margin-left: -20px;
+    width: 110%;
+    height: auto;
+    border-style: solid;
+    border-size: 1px;
+    box-shadow: 5px 10px 18px #888888;
+    margin-top: -25px;
+}
+
+.card {
+    box-shadow: 5px 10px 18px #888888;
+    margin-left: 20px;
+    margin-right: 20px;
+    text-decoration: none;
+}
+
+.card a {
+    text-decoration: none;
+}
+
+.card:hover {
+    color: #f5069d;
+}
+
+@media only screen and (max-width: 900px) {
+    .img {}
+    .card {
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+}
+
+.pj button {
+    border-radius: 0px;
+    color: white;
+    font-family: Barlow Condensed;
+    font-size: x-large;
+    font-style: solid;
+}
+
+.nvm {
+    height: 40px;
+    margin-top: -10px;
+    background-color: #000000cc;
+}
+
+@media only screen and (max-width: 900px) {
+    .nvm {
+        height: 45px;
+        margin-top: -10px;
+        background-color: #000000cc;
+    }
+    .card-main {
+        margin-top: -128px;
+    }
+}
+
+.mnbt {
+    display: none;
+}
+
+@media only screen and (max-width: 900px) {
+    .mnbt {
+        display: block;
+    }
+    .navbar-brand {
+        justify-content: center;
+        margin-left: 20%;
+    }
+}
+
+
+/*  */

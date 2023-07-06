@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+
+    <!-- Bootstrap CSS -->
+
+    {% load static %}
+
+    <link href="{% static 'bootstrap-5/css/bootstrap.min.css' %}" type="text/css" rel="stylesheet" />
+    <link href="{% static 'css/main.css' %}" type="text/css" rel="stylesheet">
+
+    <!-- js bostrap -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <!-- / -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Concert One' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Courgette' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Jockey One' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Archivo Narrow' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Barlow Condensed' rel='stylesheet'>
+
+    <!--  -->
+    {% load static %}
+    <title>{% block title %} {% endblock %}</title>
+</head>
+
+
+<body>
+
+
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light bg-white">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#"><img class="brand " src="{% static 'img/logo.png' %}"> <span class="mx-2 Courgette" style=" color: #f5069d;  font-size: 30px;"> <b>MayLancer</b></span></a>
+                <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span> -->
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav mx-auto ">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="/">Home</a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link active" href="/jobs">Jobs</a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link active" href="/categories">Categories</a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link active" href="/profile">Profile</a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link active" href="/post_job">Post New Job</a>
+                        </li>
+
+                        <li class="nav-item ">
+                            <a class="nav-link active" href="https://wa.link/uujnxz">Contact Us</a>
+                        </li>
+
+                    </ul>
+
+
+
+                    {% if user.is_authenticated %} &nbsp;<span class=""> <b>
+                        
+                        {{ user.username }}</b></span> &nbsp;&nbsp;
+                    <a href="/logout">Logout</a> {% else %}
+                    <a href="/login"><button class="btn btn-outline-dark"><span class="fa fa-user"> </span> <b>LogIn</b></button></a> {% endif %}
+
+                </div>
+            </div>
+        </nav>
+    </div>
+
+
+    <div class="navbar mx-auto" style="height: 40px; margin-top: -10px; background-color: #000000cc;">
+
+        <center>
+            <button type="button btn mx-auto ">
+        <span class="fa fa-bars text-white"></span>
+    </button>
+        </center>
+
+
+    </div>
+
+
+    {% block main %} {% endblock main %}
+
+
+
+    <footer class="bg-dark text-white pt-5 pb-4">
+        <div class="container text-center text-md-left">
+            <div class="row text-center text-md-left">
+                <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+                    <h5 class="text-uppercase mb-4 font-weight-bold text-warning">Company Name</h5>
+                    <p>PK Group Of Company</p>
+
+                </div>
+                <div class="col-md-5 col-lg-2 col-xl-2 mx-auto mt-3">
+                    <img src="{% static 'img/ml.png' %}" style="width:80%" class="mdi">
+                </div>
+                <style>
+                    @media only screen and (max-width: 900px) {
+                        .mdi {
+                            width: 30%;
+                        }
+                    }
+                </style>
+                <!-- <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
+                    <h5 class="text-uppercase mb-4 font-weight-bold text-warning">Useful links</h5>
+                    <p>
+                        <a href="#" class="text-white" style="text-decoration: none;">Your Account</a>
+                    </p>
+                    <p>
+                        <a href="#" class="text-white" style="text-decoration: none;">Become an affilite</a>
+                    </p>
+                    <p>
+                        <a href="#" class="text-white" style="text-decoration: none;">Help</a>
+                    </p>
+                </div> -->
+                <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+                    <h5 class="text-uppercase mb-4 font-weight-bold text-warning">Contact</h5>
+                    <p>
+
+                        <i class="fas fa-home mr-3"></i> India, Latur 413512.
+
+                    </p>
+                    <p>
+
+                        <i class="fas fa-envelope mr-3"></i> maylancers@gmail.com
+
+                    </p>
+                    <p>
+
+                        <i class="fas fa-phone mr-3"></i> 91 7770031012
+
+                    </p>
+
+
+
+                </div>
+                <hr class="mb-4">
+                <div class="row align-items-center">
+                    <div class="col-md-7 col-lg-8">
+                        <p>Copyright @2022 All rights reserved by: MayLancer |
+                            <a href="#" style="text-decoration: none;">
+                                <strong class="text-warning"> PK Group Of Company</strong></a>
+                        </p>
+                    </div>
+                    <div class="col-md-5 col-lg-4">
+                        <div class="text-center text-md-right">
+                            <ul class="list-unstyled list-inline">
+                                <li class="list-inline-item">
+                                    <a href="#" class="btn-floating btn-sm text-white" style="font-size: 23px;"> <i class="fab fa-facebook"></i></a>
+                                </li>
+
+                                <li class="list-inline-item">
+                                    <a href="#" class="btn-floating btn-sm text-white" style="font-size: 23px;"> <i class="fab fa-google-plus"></i></a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a href="#" class="btn-floating btn-sm text-white" style="font-size: 23px;"> <i class="fab fa-linkedin-in"></i></a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a href="#" class="btn-floating btn-sm text-white" style="font-size: 23px;"> <i class="fab fa-youtube"></i></a>
+                                </li>
+                            </ul>
+                            <script src="https://kit.fontawesome.com/77cd19f1e0.js" crossorigin="anonymous"></script>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+    <!-- 
+    <div class="container my-5">
+        <div class="row">
+            <div class="col-md-3">
+
+                <div class="card  m-0 p-0" style="border: solid 2px #f5069d ; border-top-right-radius: 0px; border-top-left-radius: 0px; border-top: none ;">
+                    <div class="card-body ">
+                        <img src="painter.jpg" class="img border-0 p-0">
+                        <h2 style="margin-top:20px;">
+                            Painter
+                        </h2>
+                        <p class="card-text"><b>Find Painters nearby you</b></p>
+                        <a href="#" class="btn sub">  Find </a>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="col-md-3">
+
+                <div class="card  m-0 p-0" style="border: solid 2px #f5069d ; border-top-right-radius: 0px; border-top-left-radius: 0px; border-top: none ;">
+                    <div class="card-body ">
+                        <img src="mechanic.jpg" class="img border-0 p-0">
+                        <h2 style="margin-top:20px;">
+                            Mechanic
+                        </h2>
+                        <p class="card-text"><b>Find Mechanics nearby you</b></p>
+                        <a href="#" class="btn sub"> Find </a>
+                    </div>
+                </div>
+
+            </div>
+
+
+
+            <div class="col-md-3">
+
+                <div class="card  m-0 p-0" style="border: solid 2px #f5069d ; border-top-right-radius: 0px; border-top-left-radius: 0px; border-top: none ;">
+                    <div class="card-body ">
+                        <img src="designer1.jpg" class="img border-0 p-0">
+                        <h2 style="margin-top:20px;">
+                            Designer
+                        </h2>
+                        <p class="card-text"><b>Find Designer nearby you</b></p>
+                        <a href="#" class="btn sub"> Find </a>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="col-md-3">
+
+                <div class="card  m-0 p-0" style="border: solid 2px #f5069d ; border-top-right-radius: 0px; border-top-left-radius: 0px; border-top: none ;">
+                    <div class="card-body ">
+                        <img src="doctor.jpg" class="img border-0 p-0">
+                        <h2 style="margin-top:20px;">
+                            Doctor
+                        </h2>
+                        <p class="card-text"><b>Find Doctors nearby you</b></p>
+                        <a href="#" class="btn sub"> Find </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div> -->
+
+    <!-- / -->
+
+
+
+
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js " integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p " crossorigin="anonymous "></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js " integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB " crossorigin="anonymous "></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js " integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13 " crossorigin="anonymous "></script>
+    -->
+</body>
+
+</html>

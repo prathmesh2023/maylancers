@@ -1,0 +1,213 @@
+ {% extends "base.html" %} {% block title %} MayLancers {% endblock title %} {% load static %} {% block main %}
+<div class="bgc" style=" background-image: url(' {% static 'img/2.gif' %} ');">
+
+    <div class="searchbox container py-5">
+
+        <h2 class="py-4 text-white text-center h1 jone">Find Work Or Workers For Every Field:</h2>
+
+
+        <div class="input-group">
+            <input type="text" class="form-control" aria-label="Text input with dropdown button" placeholder="">
+            <div class="input-group-append">
+                <button class="btn primary-bg bt text-white  " type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="fa fa-search"> </span> Search</button>
+                <div class="dropdown-menu primary-bg ronded-0 text-white di">
+                    <a class="dropdown-item di" href="#">Workers</a>
+
+                    <div role="separator" class="dropdown-divider"></div>
+                    <a class="dropdown-item di" href="#"> Work</a>
+                </div>
+            </div>
+
+            <div class="container text-center text-white my-4 rounded-0 pj">
+                <a href="post_job"><button class="btn primary-bg btn-lg"><span class="fa fa-edit" style=> </span> Post Job</button></a>
+
+
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+</div>
+
+
+
+<!-- cards -->
+<!-- <div class="container card_main ">
+    <div class="row ">
+        <div class="col-md-3 justify-content-center">
+
+            <div class="card  m-0 p-0" style="border: solid 2px #f5069d ; border-top-right-radius: 0px; border-top-left-radius: 0px; border-top: none ;">
+                <div class="card-body ">
+                    <img src="{% static 'img/card/Painter.jpg' %} " class="img border-0 p-0">
+                    <h2 style="margin-top:20px;">
+                        Painter
+                    </h2>
+                    <p class="card-text"><b>Find Painters nearby you</b></p>
+                    <a href="#" class="btn sub">  Find </a>
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="col-md-3">
+
+            <div class="card  m-0 p-0" style="border: solid 2px #f5069d ; border-top-right-radius: 0px; border-top-left-radius: 0px; border-top: none ;">
+                <div class="card-body ">
+                    <img src="{% static 'img/card/mechanic.jpg' %} " class="img border-0 p-0">
+                    <h2 style="margin-top:20px;">
+                        Mechanic
+                    </h2>
+                    <p class="card-text"><b>Find Mechanics nearby you</b></p>
+                    <a href="#" class="btn sub"> Find </a>
+                </div>
+            </div>
+
+        </div>
+
+
+
+        <div class="col-md-3">
+
+            <div class="card  m-0 p-0" style="border: solid 2px #f5069d ; border-top-right-radius: 0px; border-top-left-radius: 0px; border-top: none ;">
+                <div class="card-body ">
+                    <img src="{% static 'img/card/designer1.jpg' %} " class="img border-0 p-0">
+                    <h2 style="margin-top:20px;">
+                        Designer
+                    </h2>
+                    <p class="card-text"><b>Find Designer nearby you</b></p>
+                    <a href="#" class="btn sub"> Find </a>
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="col-md-3">
+
+            <div class="card  m-0 p-0" style="border: solid 2px #f5069d ; border-top-right-radius: 0px; border-top-left-radius: 0px; border-top: none ;">
+                <div class="card-body ">
+                    <img src="{% static 'img/card/doctor.jpg' %}" class="img border-0 p-0">
+                    <h2 style="margin-top:20px;">
+                        Doctor
+                    </h2>
+                    <p class="card-text"><b>Find Doctors nearby you</b></p>
+                    <a href="#" class="btn sub"> Find </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div> -->
+
+
+
+<div class="container card_main ">
+
+    <div class="row">
+        {% for h in cat %} {% if forloop.counter0|divisibleby:4 %}
+    </div><br>
+    <div class="row">
+        {% endif %}
+        <div class="col-md-3 text-center my-2">
+            <a href="#" style="text-decoration: none; color:black">
+                <div class="card  " style="border: solid 2px #f5069d ; border-top-right-radius: 0px; border-top-left-radius: 0px; border-top: none ;">
+                    <div class="card-body ">
+                        <img src="{{h.thumbnail.url}} " class="img border-0 p-0">
+                        <h2 style="margin-top:20px;">
+                            Designer
+                        </h2>
+                        <p class="card-text"><b><span class="fa fa-map-marker" style="color:#f5069d"> </span> Designer nearby you</b></p>
+
+                    </div>
+                </div>
+            </a>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+<br>
+
+<div class="container text-center">
+    <h2 style=" font-family:Concert One;"> Recently Added Posts</h2>
+</div>
+<div class="container">
+
+
+    <div class="container mt-5 mb-5">
+        <div class="d-flex justify-content-center row">
+            <div class="col-md-10">
+                <div class="row p-2 bg-white border rounded">
+                    <div class="col-md-3 mt-1"><img class="img-fluid img-responsive rounded product-image" src="https://i.imgur.com/QpjAiHq.jpg"></div>
+                    <div class="col-md-6 mt-1">
+                        <h5>Quant olap shirts</h5>
+                        <div class="d-flex flex-row">
+                            <div class="ratings mr-2"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div><span>310</span>
+                        </div>
+                        <div class="mt-1 mb-1 spec-1"><span>100% cotton</span><span class="dot"></span><span>Light weight</span><span class="dot"></span><span>Best finish<br></span></div>
+                        <div class="mt-1 mb-1 spec-1"><span>Unique design</span><span class="dot"></span><span>For men</span><span class="dot"></span><span>Casual<br></span></div>
+                        <p class="text-justify text-truncate para mb-0">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.<br><br></p>
+                    </div>
+                    <div class="align-items-center align-content-center col-md-3 border-left mt-1">
+                        <div class="d-flex flex-row align-items-center">
+                            <h4 class="mr-1">$13.99</h4><span class="strike-text">$20.99</span>
+                        </div>
+                        <h6 class="text-success">Free shipping</h6>
+                        <div class="d-flex flex-column mt-4"><button class="btn btn-primary btn-sm" type="button">Details</button><button class="btn btn-outline-primary btn-sm mt-2" type="button">Add to wishlist</button></div>
+                    </div>
+                </div>
+                <div class="row p-2 bg-white border rounded mt-2">
+                    <div class="col-md-3 mt-1"><img class="img-fluid img-responsive rounded product-image" src="https://i.imgur.com/JvPeqEF.jpg"></div>
+                    <div class="col-md-6 mt-1">
+                        <h5>Quant trident shirts</h5>
+                        <div class="d-flex flex-row">
+                            <div class="ratings mr-2"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div><span>310</span>
+                        </div>
+                        <div class="mt-1 mb-1 spec-1"><span>100% cotton</span><span class="dot"></span><span>Light weight</span><span class="dot"></span><span>Best finish<br></span></div>
+                        <div class="mt-1 mb-1 spec-1"><span>Unique design</span><span class="dot"></span><span>For men</span><span class="dot"></span><span>Casual<br></span></div>
+                        <p class="text-justify text-truncate para mb-0">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.<br><br></p>
+                    </div>
+                    <div class="align-items-center align-content-center col-md-3 border-left mt-1">
+                        <div class="d-flex flex-row align-items-center">
+                            <h4 class="mr-1">$14.99</h4><span class="strike-text">$20.99</span>
+                        </div>
+                        <h6 class="text-success">Free shipping</h6>
+                        <div class="d-flex flex-column mt-4"><button class="btn btn-primary btn-sm" type="button">Details</button><button class="btn btn-outline-primary btn-sm mt-2" type="button">Add to wishlist</button></div>
+                    </div>
+                </div>
+                <div class="row p-2 bg-white border rounded mt-2">
+                    <div class="col-md-3 mt-1"><img class="img-fluid img-responsive rounded product-image" src="https://i.imgur.com/Bf4dIaN.jpg"></div>
+                    <div class="col-md-6 mt-1">
+                        <h5>Quant ruybi shirts</h5>
+                        <div class="d-flex flex-row">
+                            <div class="ratings mr-2"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div><span>123</span>
+                        </div>
+                        <div class="mt-1 mb-1 spec-1"><span>100% cotton</span><span class="dot"></span><span>Light weight</span><span class="dot"></span><span>Best finish<br></span></div>
+                        <div class="mt-1 mb-1 spec-1"><span>Unique design</span><span class="dot"></span><span>For men</span><span class="dot"></span><span>Casual<br></span></div>
+                        <p class="text-justify text-truncate para mb-0">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.<br><br></p>
+                    </div>
+                    <div class="align-items-center align-content-center col-md-3 border-left mt-1">
+                        <div class="d-flex flex-row align-items-center">
+                            <h4 class="mr-1">$13.99</h4><span class="strike-text">$20.99</span>
+                        </div>
+                        <h6 class="text-success">Free shipping</h6>
+                        <div class="d-flex flex-column mt-4"><button class="btn btn-primary btn-sm" type="button">Details</button><button class="btn btn-outline-primary btn-sm mt-2" type="button">Add to wishlist</button></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+<br>
+<style>
+    .card {}
+</style>
+
+
+{% endblock main %}

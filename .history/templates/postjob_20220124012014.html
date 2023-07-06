@@ -1,0 +1,75 @@
+{% extends "base.html" %} {% block title %} MayLancers {% endblock title %} {% load static %} {% block main %}
+<div class="container ">
+
+
+    <form method="post" action="/login" style="padding:30px;">
+        <div class="mb-3">
+            <label for="exampleInputEmail1">Work Tile / Name</label>
+
+            <input required type="text" name="wtitle" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Work Tile ">
+
+        </div>
+        <div class="mb-3">
+            <label for="loc">Location</label>
+            <input required type="text" name="pwd" class="form-control" id="loc" placeholder="Ex. Pune,Maharashtra">
+        </div>
+
+
+        <div class="form-group">
+            <label for="exampleFormControlTextarea1">Description</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="exampleFormControlSelect1">Type Of Work</label>
+            <select class="form-control" id="exampleFormControlSelect1">
+              <option>1</option>
+        
+          </div>
+        
+            </select>
+        </div>
+        <br> {% csrf_token %}
+
+        <input type="file">
+        <button type="submit" class="btn btn-primary">LogIn</button>
+        <a href="/register"><button type="button" class="btn btn-success my-2">Create a new account</button></a>
+    </form>
+
+</div>
+
+<style>
+    <style>.form {}
+    
+    form {
+        background-color: white;
+        padding: 10px;
+        font-family: cursive;
+        border-radius: 15px;
+    }
+    
+    form input {
+        height: 50px;
+        font-size: 20x;
+    }
+    
+    form button {
+        height: 50px;
+        width: 100%;
+    }
+    
+    .btn {
+        font-size: 20px;
+    }
+    
+    .ml {
+        margin-top: 10%;
+    }
+    
+    .mf {
+        margin-top: 8%;
+    }
+</style>
+
+
+{% endblock %}

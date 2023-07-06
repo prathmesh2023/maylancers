@@ -1,0 +1,190 @@
+ {% extends "base.html" %} {% block title %} MayLancers {% endblock title %} {% load static %} {% block main %}
+<div class="bgc" style=" background-image: url(' {% static 'img/2.gif' %} ');">
+
+    <div class="searchbox container py-5">
+
+        <h2 class="py-4 text-white text-center h1 jone">Find Work Or Workers For Every Field:</h2>
+
+
+        <div class="input-group">
+            <input type="text" class="form-control" aria-label="Text input with dropdown button" placeholder="">
+            <div class="input-group-append">
+                <button class="btn primary-bg bt text-white  " type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="fa fa-search"> </span> Search</button>
+                <div class="dropdown-menu primary-bg ronded-0 text-white di">
+                    <a class="dropdown-item di" href="#">Workers</a>
+
+                    <div role="separator" class="dropdown-divider"></div>
+                    <a class="dropdown-item di" href="#"> Work</a>
+                </div>
+            </div>
+
+            <div class="container text-center text-white my-4 rounded-0 pj">
+                <a href="post_job"><button class="btn primary-bg btn-lg"><span class="fa fa-edit" style=> </span> Post Job</button></a>
+
+
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+</div>
+
+
+
+<!-- cards -->
+<!-- <div class="container card_main ">
+    <div class="row ">
+        <div class="col-md-3 justify-content-center">
+
+            <div class="card  m-0 p-0" style="border: solid 2px #f5069d ; border-top-right-radius: 0px; border-top-left-radius: 0px; border-top: none ;">
+                <div class="card-body ">
+                    <img src="{% static 'img/card/Painter.jpg' %} " class="img border-0 p-0">
+                    <h2 style="margin-top:20px;">
+                        Painter
+                    </h2>
+                    <p class="card-text"><b>Find Painters nearby you</b></p>
+                    <a href="#" class="btn sub">  Find </a>
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="col-md-3">
+
+            <div class="card  m-0 p-0" style="border: solid 2px #f5069d ; border-top-right-radius: 0px; border-top-left-radius: 0px; border-top: none ;">
+                <div class="card-body ">
+                    <img src="{% static 'img/card/mechanic.jpg' %} " class="img border-0 p-0">
+                    <h2 style="margin-top:20px;">
+                        Mechanic
+                    </h2>
+                    <p class="card-text"><b>Find Mechanics nearby you</b></p>
+                    <a href="#" class="btn sub"> Find </a>
+                </div>
+            </div>
+
+        </div>
+
+
+
+        <div class="col-md-3">
+
+            <div class="card  m-0 p-0" style="border: solid 2px #f5069d ; border-top-right-radius: 0px; border-top-left-radius: 0px; border-top: none ;">
+                <div class="card-body ">
+                    <img src="{% static 'img/card/designer1.jpg' %} " class="img border-0 p-0">
+                    <h2 style="margin-top:20px;">
+                        Designer
+                    </h2>
+                    <p class="card-text"><b>Find Designer nearby you</b></p>
+                    <a href="#" class="btn sub"> Find </a>
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="col-md-3">
+
+            <div class="card  m-0 p-0" style="border: solid 2px #f5069d ; border-top-right-radius: 0px; border-top-left-radius: 0px; border-top: none ;">
+                <div class="card-body ">
+                    <img src="{% static 'img/card/doctor.jpg' %}" class="img border-0 p-0">
+                    <h2 style="margin-top:20px;">
+                        Doctor
+                    </h2>
+                    <p class="card-text"><b>Find Doctors nearby you</b></p>
+                    <a href="#" class="btn sub"> Find </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div> -->
+
+
+
+<div class="container card_main ">
+
+    <div class="row">
+        {% for h in cat %} {% if forloop.counter0|divisibleby:4 %}
+    </div><br>
+    <div class="row">
+        {% endif %}
+        <div class="col-md-3 text-center my-2">
+            <a href="#" style="text-decoration: none; color:black">
+                <div class="card  " style="border: solid 2px #f5069d ; border-top-right-radius: 0px; border-top-left-radius: 0px; border-top: none ;">
+                    <div class="card-body ">
+                        <img src="{{h.thumbnail.url}} " class="img border-0 p-0">
+                        <h2 style="margin-top:20px;">
+                            Designer
+                        </h2>
+                        <p class="card-text"><b><span class="fa fa-map-marker" style="color:#f5069d"> </span> Designer nearby you</b></p>
+
+                    </div>
+                </div>
+            </a>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+<br>
+
+<div class="container text-center">
+    <h2 style=" font-family:Concert One';"> Recently Added Posts</h2>
+</div>
+
+
+<div class="container rpost">
+
+    <div class="container">
+        <div class="col-4">
+
+        </div>
+        <div class="col-4">
+
+        </div>
+
+    </div>
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <img src="https://www.techsmith.com/blog/wp-content/uploads/2019/06/YouTube-Thumbnail-Sizes.png" class="rounded float-left " alt="...">
+
+            </div>
+            <div class="col-6">
+                <h2>Tittle</h2>
+                <p>Description</p>
+                <button class="btn btn-secondary">Category</button>
+            </div>
+            <div class="col">
+                <b><p><span class="fa fa-map-marker"> </span> Loc</p></b>
+
+                <b>Amount:</b>
+                <br>
+
+                <b>From : Rs. 0 /-</b>
+                <br>
+                <b>To : Rs. 0 /-</b>
+
+
+
+                <button class="btn btn-primary w-100 my-1"> Apply</button>
+            </div>
+        </div>
+    </div>
+
+</div>
+<br>
+<style>
+    .rpost img {
+        max-width: 90%;
+    }
+</style>
+
+
+{% endblock main %}

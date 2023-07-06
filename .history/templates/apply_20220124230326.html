@@ -1,0 +1,56 @@
+{% extends "base.html" %} {% block title %} proposal to {{post.title}} {% endblock title %} {% block main %}
+
+<div class="container text-center my-3">
+    <h3>Wtriet A Proposal to <span class="" style="color: green;">{{post.title}}</span></h3>
+</div>
+
+<div class="container">
+    <form method="post" action="/apply">
+        <div class="mb-3">
+
+            <textarea name="text" class="form-control " rows="8" placeholder="Start Typing Proposal"></textarea> </div>
+
+        {% csrf_token %}
+
+        <input type="hidden" name="user" value="">
+        <input type="hidden" name="{{post.title}}">
+
+
+        <button type="submit" class="btn btn-primary">Send</button>
+
+    </form>
+</div>
+
+
+
+<style>
+    form {
+        background-color: white;
+        padding: 40px;
+        font-family: cursive;
+        border-radius: 15px;
+    }
+    
+    form input {
+        height: 60px;
+        font-size: 20x;
+    }
+    
+    form button {
+        height: 60px;
+        width: 100%;
+    }
+    
+    .btn {
+        font-size: 20px;
+    }
+    
+    .ml {
+        margin-top: 10%;
+    }
+    
+    .mf {
+        margin-top: 8%;
+    }
+</style>
+{% endblock main %}

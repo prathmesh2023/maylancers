@@ -1,0 +1,29 @@
+{% extends "base.html" %} {% block title %} Categories | Maylancers {% endblock title %} {% block main %}
+
+
+<div class="container card_main ">
+
+    <div class="row">
+        {% for h in cat %} {% if forloop.counter0|divisibleby:4 %}
+    </div><br>
+    <div class="row">
+        {% endif %}
+        <div class="col-md-3 text-center my-2">
+            <a href="/category/{{h.title}}" style="text-decoration: none; color:black">
+                <div class="card  " style="border: solid 2px #f5069d ; border-top-right-radius: 0px; border-top-left-radius: 0px; border-top: none ;">
+                    <div class="card-body ">
+                        <img src="{{h.thumbnail.url}} " class="img border-0 p-0">
+                        <h2 style="margin-top:20px;">
+                            Designer
+                        </h2>
+                        <p class="card-text"><b><span class="fa fa-map-marker" style="color:#f5069d"> </span> Designer nearby you</b></p>
+
+                    </div>
+                </div>
+            </a>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+<br> {% endblock main %}

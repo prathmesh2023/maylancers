@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+
+    {% load static %}
+
+    <link href="{% static 'bootstrap-5/css/bootstrap.min.css' %}" type="text/css" rel="stylesheet" />
+    <link href="{% static 'css/main.css' %}" type="text/css" rel="stylesheet">
+
+    <!-- js bostrap -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <!-- / -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Concert One' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Courgette' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Jockey One' rel='stylesheet'>
+
+    <!--  -->
+    {% load static %}
+    <title>{% block title %} {% endblock %}</title>
+</head>
+
+
+<body>
+
+
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light bg-white">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#"><img class="brand " src="{% static 'img/logo.png' %}"> <span class="mx-2 Courgette" style=" color: #f5069d;  font-size: 30px;"> <b>MayLancer</b></span></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav mx-auto ">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link active" href="#">Features</a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link active" href="#">Pricing</a>
+                        </li>
+                        <li class="nav-item  ">
+                            <a class="nav-link active disabled">Disabled</a>
+                        </li>
+                    </ul>
+
+
+
+                    <a href="/login"><button class="btn btn-outline-dark">LogIn</button></a> {% if user.is_authenticated %}Hello, {{ user.username }} .{% endif %}
+                </div>
+            </div>
+        </nav>
+    </div>
+
+
+    <div class="navbar " style="height: 40px; margin-top: -10px; background-color: #000000cc;">
+
+
+
+
+    </div>
+
+
+    {% block main %} {% endblock main %}
+
+    <!-- 
+    <div class="container my-5">
+        <div class="row">
+            <div class="col-md-3">
+
+                <div class="card  m-0 p-0" style="border: solid 2px #f5069d ; border-top-right-radius: 0px; border-top-left-radius: 0px; border-top: none ;">
+                    <div class="card-body ">
+                        <img src="painter.jpg" class="img border-0 p-0">
+                        <h2 style="margin-top:20px;">
+                            Painter
+                        </h2>
+                        <p class="card-text"><b>Find Painters nearby you</b></p>
+                        <a href="#" class="btn sub">  Find </a>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="col-md-3">
+
+                <div class="card  m-0 p-0" style="border: solid 2px #f5069d ; border-top-right-radius: 0px; border-top-left-radius: 0px; border-top: none ;">
+                    <div class="card-body ">
+                        <img src="mechanic.jpg" class="img border-0 p-0">
+                        <h2 style="margin-top:20px;">
+                            Mechanic
+                        </h2>
+                        <p class="card-text"><b>Find Mechanics nearby you</b></p>
+                        <a href="#" class="btn sub"> Find </a>
+                    </div>
+                </div>
+
+            </div>
+
+
+
+            <div class="col-md-3">
+
+                <div class="card  m-0 p-0" style="border: solid 2px #f5069d ; border-top-right-radius: 0px; border-top-left-radius: 0px; border-top: none ;">
+                    <div class="card-body ">
+                        <img src="designer1.jpg" class="img border-0 p-0">
+                        <h2 style="margin-top:20px;">
+                            Designer
+                        </h2>
+                        <p class="card-text"><b>Find Designer nearby you</b></p>
+                        <a href="#" class="btn sub"> Find </a>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="col-md-3">
+
+                <div class="card  m-0 p-0" style="border: solid 2px #f5069d ; border-top-right-radius: 0px; border-top-left-radius: 0px; border-top: none ;">
+                    <div class="card-body ">
+                        <img src="doctor.jpg" class="img border-0 p-0">
+                        <h2 style="margin-top:20px;">
+                            Doctor
+                        </h2>
+                        <p class="card-text"><b>Find Doctors nearby you</b></p>
+                        <a href="#" class="btn sub"> Find </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div> -->
+
+    <!-- / -->
+
+
+
+
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js " integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p " crossorigin="anonymous "></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js " integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB " crossorigin="anonymous "></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js " integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13 " crossorigin="anonymous "></script>
+    -->
+</body>
+
+</html>

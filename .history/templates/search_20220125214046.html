@@ -1,0 +1,69 @@
+<div class="container text-center">
+    <h2 style=" font-family:Concert One';"> Recently Added Posts</h2>
+</div>
+
+
+<div class="container rpost">
+
+    <div class="container">
+        <div class="col-4">
+
+        </div>
+        <div class="col-4">
+
+        </div>
+
+    </div>
+
+
+    <div class="container my-4  ">
+
+        {% for i in posts %}
+        <div class="row my-2" style="box-shadow: 5px 5px 8px 5px #888888; padding: 25px;">
+            <div class="col imgcol">
+                <img src="{{i.thumb.url}}" class="rounded float-left " alt="...">
+
+            </div>
+            <div class="col-6">
+                <h2>{{i.title}}</h2>
+                <p>{{i.desc}}</p>
+
+                <p><span class="fa fa-user"> </span> {{i.user}}</p>
+                <button class="btn btn-secondary btn-sm">{{i.cat}}</button>
+            </div>
+            <div class="col">
+                <b><p><span class="fa fa-map-marker"> </span> {{i.loc}}</p></b>
+
+                <b>Amount:</b>
+                <br>
+
+                <b>From : Rs. {{i.afrom}} /-</b>
+                <br>
+                <b>To : Rs. {{i.ato}} /-</b> {% if i.done is True %}
+
+                <a href="#"> <button class="btn btn-danger w-100 my-3"> Closed</button></a>
+                {% else %}
+                <a href="apply/{{i.title}}/{{i.id}}"> <button class="btn btn-primary w-100 my-3"> Apply</button></a>
+                {% endif %}
+
+
+            </div>
+        </div>
+        {% endfor %}
+
+    </div>
+
+</div>
+
+<br>
+<style>
+    .rpost img {
+        max-width: 90%;
+    }
+    
+    @media only screen and (max-width: 900px) {
+        .imgcol {
+            display: none;
+        }
+    }
+</style>

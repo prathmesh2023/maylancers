@@ -1,0 +1,202 @@
+ {% extends "base.html" %} {% block title %} MayLancers {% endblock title %} {% load static %} {% block main %}
+<div class="bgc" style=" background-image: url(' {% static 'img/2.gif' %} ');">
+
+    <div class="searchbox container py-5">
+
+        <h2 class="py-4 text-white text-center h1 jone">Find Work Or Workers For Every Field:</h2>
+
+
+        <div class="input-group">
+            <form action="#" method="post">
+                {% csrf_token %}
+                <input type="text" class="form-control" aria-label="Text input with dropdown button" placeholder="">
+                <div class="input-group-append">
+                    <button class="btn primary-bg bt text-white  " type="submit"></button><span class="fa fa-search"> </span> Search</button>
+            </form>
+            </div>
+
+            <div class="container text-center text-white my-4 rounded-0 pj">
+                <a href="post_job"><button class="btn primary-bg btn-lg"><span class="fa fa-edit" style=> </span> Post Job</button></a>
+
+
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+</div>
+
+
+
+<!-- cards -->
+<!-- <div class="container card_main ">
+    <div class="row ">
+        <div class="col-md-3 justify-content-center">
+
+            <div class="card  m-0 p-0" style="border: solid 2px #f5069d ; border-top-right-radius: 0px; border-top-left-radius: 0px; border-top: none ;">
+                <div class="card-body ">
+                    <img src="{% static 'img/card/Painter.jpg' %} " class="img border-0 p-0">
+                    <h2 style="margin-top:20px;">
+                        Painter
+                    </h2>
+                    <p class="card-text"><b>Find Painters nearby you</b></p>
+                    <a href="#" class="btn sub">  Find </a>
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="col-md-3">
+
+            <div class="card  m-0 p-0" style="border: solid 2px #f5069d ; border-top-right-radius: 0px; border-top-left-radius: 0px; border-top: none ;">
+                <div class="card-body ">
+                    <img src="{% static 'img/card/mechanic.jpg' %} " class="img border-0 p-0">
+                    <h2 style="margin-top:20px;">
+                        Mechanic
+                    </h2>
+                    <p class="card-text"><b>Find Mechanics nearby you</b></p>
+                    <a href="#" class="btn sub"> Find </a>
+                </div>
+            </div>
+
+        </div>
+
+
+
+        <div class="col-md-3">
+
+            <div class="card  m-0 p-0" style="border: solid 2px #f5069d ; border-top-right-radius: 0px; border-top-left-radius: 0px; border-top: none ;">
+                <div class="card-body ">
+                    <img src="{% static 'img/card/designer1.jpg' %} " class="img border-0 p-0">
+                    <h2 style="margin-top:20px;">
+                        Designer
+                    </h2>
+                    <p class="card-text"><b>Find Designer nearby you</b></p>
+                    <a href="#" class="btn sub"> Find </a>
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="col-md-3">
+
+            <div class="card  m-0 p-0" style="border: solid 2px #f5069d ; border-top-right-radius: 0px; border-top-left-radius: 0px; border-top: none ;">
+                <div class="card-body ">
+                    <img src="{% static 'img/card/doctor.jpg' %}" class="img border-0 p-0">
+                    <h2 style="margin-top:20px;">
+                        Doctor
+                    </h2>
+                    <p class="card-text"><b>Find Doctors nearby you</b></p>
+                    <a href="#" class="btn sub"> Find </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div> -->
+
+
+
+<div class="container card_main ">
+
+    <div class="row">
+        {% for h in cat %} {% if forloop.counter0|divisibleby:4 %}
+    </div><br>
+    <div class="row">
+        {% endif %}
+        <div class="col-md-3 text-center my-2">
+            <a href="/category/{{h.title}}" style="text-decoration: none; color:black">
+                <div class="card  " style="border: solid 2px #f5069d ; border-top-right-radius: 0px; border-top-left-radius: 0px; border-top: none ;">
+                    <div class="card-body ">
+                        <img src="{{h.thumbnail.url}} " class="img border-0 p-0">
+                        <h2 style="margin-top:20px;">
+                            Designer
+                        </h2>
+                        <p class="card-text"><b><span class="fa fa-map-marker" style="color:#f5069d"> </span> Designer nearby you</b></p>
+
+                    </div>
+                </div>
+            </a>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+<br>
+
+<div class="container text-center">
+    <h2 style=" font-family:Concert One';"> Recently Added Posts</h2>
+</div>
+
+
+<div class="container rpost">
+
+    <div class="container">
+        <div class="col-4">
+
+        </div>
+        <div class="col-4">
+
+        </div>
+
+    </div>
+
+
+    <div class="container my-4  ">
+
+        {% for i in post %}
+        <div class="row my-2" style="box-shadow: 5px 5px 8px 5px #888888; padding: 25px;">
+            <div class="col imgcol">
+                <img src="{{i.thumb.url}}" class="rounded float-left " alt="...">
+
+            </div>
+            <div class="col-6">
+                <h2>{{i.title}}</h2>
+                <p>{{i.desc}}</p>
+
+                <p><span class="fa fa-user"> </span> {{i.user}}</p>
+                <button class="btn btn-secondary btn-sm">{{i.cat}}</button>
+            </div>
+            <div class="col">
+                <b><p><span class="fa fa-map-marker"> </span> {{i.loc}}</p></b>
+
+                <b>Amount:</b>
+                <br>
+
+                <b>From : Rs. {{i.afrom}} /-</b>
+                <br>
+                <b>To : Rs. {{i.ato}} /-</b> {% if i.done is True %}
+
+                <a href="#"> <button class="btn btn-danger w-100 my-3"> Closed</button></a>
+                {% else %}
+                <a href="apply/{{i.title}}/{{i.id}}"> <button class="btn btn-primary w-100 my-3"> Apply</button></a>
+                {% endif %}
+
+
+            </div>
+        </div>
+        {% endfor %}
+
+    </div>
+
+</div>
+<br>
+<style>
+    .rpost img {
+        max-width: 90%;
+    }
+    
+    @media only screen and (max-width: 900px) {
+        .imgcol {
+            display: none;
+        }
+    }
+</style>
+
+
+{% endblock main %}
